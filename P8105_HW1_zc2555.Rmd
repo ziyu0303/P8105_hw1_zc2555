@@ -38,3 +38,24 @@ as.numeric(pull(example_df, vector_factor))
 
 For variable vector_char, the conversion failed because vector_char are character variables
 
+
+Q2: Next, we are doing question 2. 
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+The penguins dataset has 5 variables, they are species, island, bill_length_mm, bill_depth_mm, flipper_lenth_mm.
+
+The dataset has `r nrow(penguins)`rows and `r ncol(penguins)`columns.
+
+The mean of flipper length is `r mean(pull(penguins,flipper_length_mm))`
+
+```{r code for scatterplot}
+
+ggplot(data=penguins, aes(x = bill_length_mm, y = flipper_length_mm, color=species)) + geom_point()
+
+ggsave("Problem2_scatterplot.png")
+
+```
+
