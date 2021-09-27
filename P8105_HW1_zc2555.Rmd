@@ -25,4 +25,16 @@ mean(pull(example_df, vector_char))
 mean(pull(example_df, vector_factor))
 ```
 
+The mean of samp is -0.4743189, the mean for vector_logical is 0.2. However, for vector_char and vector_factor, the pull function did not work.
+
+
+Trying to convert variable to numeric type
+
+```{r results='hide'}
+as.numeric(pull(example_df, vector_logical))
+as.numeric(pull(example_df, vector_char))
+as.numeric(pull(example_df, vector_factor))
+```
+
+For variable vector_char, the conversion failed because vector_char are character variables
 
