@@ -9,7 +9,8 @@ output: github_document
 library(tidyverse)
 ```
 
-First we need to create a data frame for question 1
+_Question_1_ First, we need to create a data frame for question 1
+Here are the codes:
 
 ```{r}
 example_df = tibble(
@@ -25,10 +26,10 @@ mean(pull(example_df, vector_char))
 mean(pull(example_df, vector_factor))
 ```
 
-The mean of samp is -0.4743189, the mean for vector_logical is 0.2. However, for vector_char and vector_factor, the pull function did not work.
+*We can see that the mean for samp & vector_logical are numerical . However, for vector_char and vector_factor, the pull function did not work.
 
 
-Trying to convert variable to numeric type
+_Trying to convert variable to numeric type_
 
 ```{r results='hide'}
 as.numeric(pull(example_df, vector_logical))
@@ -39,21 +40,27 @@ as.numeric(pull(example_df, vector_factor))
 For variable vector_char, the conversion failed because vector_char are character variables
 
 
-Q2: Next, we are doing question 2. 
+
+
+
+_Question_2_: 
 
 ```{r}
 data("penguins", package = "palmerpenguins")
 ```
 
-The penguins dataset has 5 variables, they are species, island, bill_length_mm, bill_depth_mm, flipper_lenth_mm.
+The penguins dataset has 5 variables, they are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm.
+
 
 The dataset has `r nrow(penguins)`rows and `r ncol(penguins)`columns.
 
-The mean of flipper length is `r mean(pull(penguins,flipper_length_mm))`
+The mean of flipper length is `r mean(pull(penguins,flipper_length_mm), na.rm=T)`
 
-```{r code for scatterplot}
 
-ggplot(data=penguins, aes(x = bill_length_mm, y = flipper_length_mm, color=species)) + geom_point()
+
+```{r, code for scatterplot}
+
+ggplot(data=penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 
 ggsave("Problem2_scatterplot.png")
 
