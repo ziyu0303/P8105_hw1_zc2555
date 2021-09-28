@@ -49,7 +49,7 @@ _Question_2_:
 data("penguins", package = "palmerpenguins")
 ```
 
-The penguins dataset has 5 variables, they are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm.
+The penguins dataset has 8 variables, they are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex and year. Among those, bill_length_mm, bill_depth_mm, flipper_length_mm and body_mass_g and year are numeric variables.
 
 
 The dataset has `r nrow(penguins)`rows and `r ncol(penguins)`columns.
